@@ -3,8 +3,8 @@
 require_once __DIR__ . '/../vendor/autoload.php'; // Autoload files using Composer autoload
 include 'process.php';
 
-use \SocketIO\Emitter;
-use \SocketIO\Binary;
+use SocketIO\Emitter;
+use SocketIO\Binary;
 
 class EmitterTest extends PHPUnit_Framework_TestCase {
   public function testEmitCreatesARedisPublish() {
