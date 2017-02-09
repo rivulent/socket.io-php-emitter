@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../vendor/autoload.php'; // Autoload files using Composer autoload
 include 'process.php';
 
-use SocketIO\Emitter;
+use \SocketIO\Emitter;
 
 class EmitterTest extends PHPUnit_Framework_TestCase {
   public function testEmitCreatesARedisPublish() {
@@ -118,7 +118,7 @@ class EmitterTest extends PHPUnit_Framework_TestCase {
     // Running this should produce something that's visible in `redis-cli monitor`
     $emitter = new Emitter(NULL, array('host' => '127.0.0.1', 'port' => '6379'));
     $binarydata = pack('CCCCC', 0, 1, 2, 3, 4);
-    $emitter->emit('binary event', new SocketIO\Binary($binarydata));
+    $emitter->emit('binary event', new \SocketIO\Binary($binarydata));
 
     $p->stop();
     $contents= file_get_contents('redis.log');
