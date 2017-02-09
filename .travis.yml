@@ -6,7 +6,7 @@ node_js:
   - "5.7"
 sudo: false
 script: 
-  - "composer update && make test"
+  - "php composer.phar update && make test"
 services:
   - redis-server
 
